@@ -1,0 +1,69 @@
+int Factorial(int n)
+            {
+                if (n == 1) return 1;
+
+                return n * Factorial(n - 1);
+            }
+            double eps = Convert.ToDouble(polA.Text);
+            double nak = 0, nak1 = 0, nak2 = 0, nak3 = 0, nak4 = 0, nak5 = 0;
+            int i = 1, i1 = 1, i2 = 1, i3 = 0, i4 = 1, i5 = 0;
+            while (1.0 / (i * i) > eps)
+            {
+                double a = 1.0 / (i * i);
+                nak += a;
+                i += 1;
+            }
+            i += 1;
+            Otv.Content = $"a) для i = {i} a = {1.0 / (i * i)} sum = {nak}";
+
+
+
+            while (1.0 / (i1 * (i1 + 1)) > eps)
+            {
+                double a1 = 1.0 / (i1 * (i1 + 1));
+                nak1 += a1;
+                i1 += 1;
+            }
+            i1 += 1;
+            Otv1.Content = $"б) для i = {i1} a = {1.0 / (i1 * (i1 + 1))} sum = {nak1}";
+
+
+            double a2;
+            while(true)
+            {
+                a2 = Pow(-1.0, i2) / Factorial(i2);
+                nak2 += a2;
+                i2++;
+                if (Abs(a2) < eps) break;
+            }
+            Otv2.Content = $"в) для i = {i2} a = {Abs(Pow(-1.0, i2) / Factorial(i2))} sum = {nak2}";
+
+            double a3;
+            while (true)
+            {
+                a3 = Pow(-2.0, i3) / Factorial(i3+1);
+                nak3 += a3;
+                i3++;
+                if (Abs(a3) < eps) break;
+            }
+            Otv3.Content = $"г) для i = {i3} a = {Abs(Pow(-2.0, i3) / Factorial(i3))} sum = {nak3}";
+
+            double a4;
+            while (true)
+            {
+                a4 = Pow(-1.0, i4 + 1) / (i4 * (i4 + 1) * (i4 + 2));
+                nak4 += a4;
+                i4++;
+                if (Abs(Pow(-1.0, i4 + 1) / (i4 * (i4 + 1) * (i4 + 2))) < eps) break;
+            }
+            Otv4.Content = $"д) для i = {i4} a = {Abs(Pow(-1.0, i4 + 1) / (i4 * (i4 + 1) * (i4 + 2)))} sum = {nak4}";
+
+            double a5;
+            while (true)
+            {
+                a5 = 1.0 / (Pow(4, i5) + Pow(5, i5 + 2));
+                nak5 += a5;
+                i5++;
+                if (Abs(1.0 / (Pow(4, i5) + Pow(5, i5 + 2))) < eps) break;
+            }
+            Otv5.Content = $"e) для i = {i5} a = {Abs(1.0 / (Pow(4, i5) + Pow(5, i5 + 2)))} sum = {nak5}";
